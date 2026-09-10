@@ -1,0 +1,1209 @@
+# Translation of Plugins - GTM4WP &#8211; A Google Tag Manager (GTM) plugin for WordPress - Stable (latest release) in Japanese
+# This file is distributed under the same license as the Plugins - GTM4WP &#8211; A Google Tag Manager (GTM) plugin for WordPress - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2026-07-22 18:26:50+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: GlotPress/4.0.3\n"
+"Language: ja_JP\n"
+"Project-Id-Version: Plugins - GTM4WP &#8211; A Google Tag Manager (GTM) plugin for WordPress - Stable (latest release)\n"
+
+#: admin/admin-tab-basicdata.php:171
+msgid "There is no direct replacement: collect weather data in Google Tag Manager or with a dedicated service instead."
+msgstr "直接の代替手段はありません。代わりに Google Tag Manager または専用サービスで気象情報を収集してください。"
+
+#: admin/admin-tab-basicdata.php:128
+msgid "There is no direct replacement: collect geo data in Google Tag Manager or with your analytics provider instead."
+msgstr "直接の代替手段はありません。代わりに Google Tag Manager または分析プロバイダーでジオデータを収集してください。"
+
+#: admin/admin-tab-scrolltracking.php:16
+msgid "The whole scroll tracking feature is removed in GTM4WP 2.0: use the Scroll Depth trigger built into Google Tag Manager instead."
+msgstr "GTM4WP 2.0ではスクロールトラッキング機能全体を削除しました。代わりに Google Tag Manager に組み込まれた Scroll Depth トリガーを使用してください。"
+
+#. translators: 1: comma separated list of the deprecated features that are
+#. currently enabled on this site.
+#: admin/admin.php:1317
+msgid "This site currently uses: %1$s. These keep working in version 1.22.4 but will not be available in 2.0."
+msgstr "このサイトは現在 %1$s を使用しています。これらはバージョン1.22.4では引き続き動作しますが、2.0では利用できなくなります。"
+
+#. translators: 1: opening anchor element pointing to the announcement post. 2:
+#. closing anchor element.
+#: admin/admin.php:1304
+msgid "Version 2.0 is a complete rewrite of the plugin. Some features are deprecated in this version and will be removed in 2.0. A public beta is available for testing - %1$sread the announcement%2$s to see what changes and how to try it."
+msgstr "バージョン2.0はプラグインを完全に書き直したものです。このバージョンでは一部の機能が非推奨となり、2.0で削除します。テスト用の公開ベータ版を利用できます - 変更内容と試す方法については、%1$sお知らせをお読みください%2$s。"
+
+#: admin/admin.php:52
+msgid "this feature still works in version 1.22.4 but is no longer developed and will be removed in GTM4WP 2.0."
+msgstr "この機能はバージョン1.22.4ではまだ動作しますが、今後開発は継続せず、GTM4WP 2.0で削除します。"
+
+#: admin/admin.php:1300
+msgid "GTM4WP 2.0 is on its way"
+msgstr "GTM4WP 2.0がまもなく登場します"
+
+#: admin/admin.php:1454
+msgid "Important Upgrade Notice:"
+msgstr "重要なアップグレードのお知らせ:"
+
+#. translators: 1: anchor element linking to the official GA4 doc about
+#. clearing the ecommerce object. 2: closing anchor element.
+#: admin/admin-tab-integrate.php:159
+msgid ""
+"When a user clicks on a product in a list, the <code>select_item</code> event uses a callback function with Google Tag Manager (GTM).\n"
+"\t\t\t\t\tThis ensures that GTM can fire all related tags before the browser navigates to the product detail page.\n"
+"\t\t\t\t\tYou can customize a timeout period (in milliseconds). This timeout only comes into play if a tag fails to fire within the specified time\n"
+"\t\t\t\t\tfor some reason. If all tags fire correctly, this timeout won't affect anything."
+msgstr ""
+"ユーザーがリスト内の商品をクリックすると、<code>select_item</code> イベントは Google Tag Manager (GTM) のコールバック関数を使用します。\n"
+"\t\t\t\t\tこれにより、ブラウザが商品の詳細ページに移動する前に、GTM が関連するすべてのタグを実行できるようになります。\n"
+"\t\t\t\t\tタイムアウト時間 (ミリ秒) をカスタマイズできます。このタイムアウトは、指定された時間内にタグが発火しなかった場合にのみ有効になります。\n"
+"\t\t\t\t\tすべてのタグが正しく発火すれば、このタイムアウトは何も影響しません。"
+
+#: admin/admin-tab-integrate.php:155
+msgid "Set maximum timeout for select_item event"
+msgstr "select_item イベントの最大タイムアウトの設定"
+
+#: admin/admin-tab-integrate.php:285
+msgid "WebToffee GDPR Cookie Consent (v2.x)"
+msgstr "WebToffee GDPR Cookie Consent (v2.x)"
+
+#: admin/admin-tab-integrate.php:287
+msgid ""
+"Enabling this feature will fire a GTM event (cookie_consent_update) when the consent banner has been closed\n"
+"\t\t\t\twith consents being set or during pageload when previously set consents have been found.\n"
+"\t\t\t\tYou do not need to use this integration with v3.x or above since it includes all the necessary codes to integrate\n"
+"\t\t\t\tthe consent banner with Google Tag Manager. Just use their wcc_gcm_consent_update event to fire\n"
+"\t\t\t\ttags that do not support advanced consent mode (usually non-Google tags) or if you would like to implement\n"
+"\t\t\t\tbasic consent mode."
+msgstr ""
+"この機能を有効にすると、同意バナーが閉じられた際に GTM イベント (cookie_consent_update) が発火します。↵\n"
+"同意設定が変更された場合、または以前に設定された同意がページ読み込み時に検出された場合に発火します。↵\n"
+"v3.x 以降のバージョンでは必要な連携コードがすべて含まれているため、この連携機能を使用する必要はありません。↵\n"
+"Google Tag Manager との連携用の同意バナーが組み込まれています。高度な同意モードをサポートしていないタグ (通常は Google タグ以外) を使用する場合、または基本レベルの同意モードを実装したい場合は、wcc_gcm_consent_update イベントを使用してタグを発火してください"
+
+#: admin/admin-tab-integrate.php:120
+msgid "If this option is turned on, the view_item event will be also fired during page load of a variable product using parent product data."
+msgstr "このオプションを有効にすると、バリアブル商品のページ読み込み時に、親商品のデータを使用して view_item イベントも発火します。"
+
+#: admin/admin-tab-integrate.php:119
+msgid "Fire view_item on parent product"
+msgstr "親商品で view_item を発火する"
+
+#. translators: 1: anchor element linking to GA4 Ecommerce docs. 2: closing
+#. anchor element. 3: anchor element linking to GTM4WP setup guide for Google
+#. Analytics 4. 4: closing anchor element.
+#: admin/admin-tab-integrate.php:23
+msgid ""
+"Choose this option if you would like to track e-commerce data using \n"
+"\t\t\t\t\t %1$secommerce tracking%2$s.<br>\n"
+"\t\t\t\t\t Use the plugin's %3$sofficial guides%4$s to setup your Google Tag Manager container:<br/>\n"
+"\t\t\t\t\t <strong>WooCommerce 5.0+ is required to use this integration</strong>"
+msgstr ""
+"eコマースデータを追跡したい場合は、このオプションを選択してください。\n"
+"\t\t\t\t\t %1$seコマーストラッキング%2$s を使用します。<br>\n"
+"\t\t\t\t\t Google タグ マネージャーコンテナの設定には、プラグインの %3$s公式ガイド%4$s をご利用ください。<br/>\n"
+"\t\t\t\t\t <strong>この連携機能を使用するには WooCommerce 5.0 以上が必要です</strong>"
+
+#: admin/admin-tab-integrate.php:42
+msgid ""
+"If you have many products shown on product category pages and/or on your site home, you could miss pageviews in Google Analytics due to the\n"
+"\t\t\t\tamount of data that is needed to be sent. To prevent this, you can split product impression data into multiple Google Analytics events by\n"
+"\t\t\t\tentering a number here (minimum 10-15 recommended)<br /><br />Leave this value 0 to include product impression data in your pageview hit."
+msgstr ""
+"商品カテゴリーページやサイトトップページに多数の商品が表示されている場合、送信するデータ量が多くなり、\n"
+"\t\t\t\tGoogle アナリティクスでページビューが取りこぼされる可能性があります。これを防ぐため、ここに数値を入力すると\n"
+"\t\t\t\t商品インプレッションデータを複数の Google アナリティクスイベントに分割できます (最小値は 10〜15 を推奨)。<br /><br />0 のままにすると、商品インプレッションデータはページビューヒットに含まれます。"
+
+#: admin/admin-tab-integrate.php:244
+msgid "Ad User Data"
+msgstr "広告目的のユーザーデータ"
+
+#: admin/admin-tab-integrate.php:252
+msgid "Ad Personalization"
+msgstr "パーソナライズド広告"
+
+#: admin/admin-tab-integrate.php:253
+msgid "Select this checkbox to make the ad_personalization flag \"granted\" by default."
+msgstr "このチェックボックスを選択すると、ad_personalization フラグがデフォルトで「許可」されます。"
+
+#: admin/admin.php:1090
+msgid "WebToffee GDPR Cookie Consent"
+msgstr "WebToffee GDPR Cookie Consent"
+
+#: admin/admin-tab-integrate.php:245
+msgid "Select this checkbox to make the ad_user_data flag \"granted\" by default."
+msgstr "このチェックボックスを選択すると、ad_user_data フラグがデフォルトで「許可」されます。"
+
+#. Plugin Name of the plugin
+#: duracelltomi-google-tag-manager-for-wordpress.php
+msgid "GTM4WP - A Google Tag Manager (GTM) plugin for WordPress"
+msgstr "GTM4WP - A Google Tag Manager (GTM) plugin for WordPress"
+
+#: admin/admin-tab-basicdata.php:108
+msgid "Visitor IP - Read from custom header."
+msgstr "訪問者の IP - カスタムヘッダーから読み込む。"
+
+#. translators: 1: opening anchor tag linking to Google's documentation about
+#. the consent mode command. 2: Closing anchor tag.
+#: admin/admin-tab-integrate.php:215
+msgid ""
+"Enable this checkbox if you wish to execute the \"default\" command of %1$sGoogle Consent Mode%2$s before the container loads.\n"
+"\t\t\t\t\tThe \"update\" command needs to be executed from your consent management tool.<br /><br />\n"
+"\t\t\t\t\tDO NOT enable this feature if your consent manager tool supports firing both the \"default\" and the \"update\" command."
+msgstr ""
+"コンテナの読み込み前に %1$sGoogle 同意モード%2$s の「default」コマンドを実行したい場合は、このチェックボックスを有効にしてください。\n"
+"\t\t\t\t\t「update」コマンドは、ご利用の同意管理ツール側から実行する必要があります。<br /><br />\n"
+"\t\t\t\t\t同意管理ツールが「default」と「update」の両コマンドの発行をサポートしている場合は、この機能を有効にしないでください。"
+
+#: admin/admin-tab-integrate.php:19
+msgid "Track e-commerce"
+msgstr "eコマースの追跡"
+
+#: admin/admin-tab-basicdata.php:109
+msgid "By default, the plugin will check the so called REMOTE_ADDR system variable for IP addresses. In some cases, this might not include the correct address. You may specify a custom header to read the IP address from."
+msgstr "デフォルトでは、プラグインは REMOTE_ADDR システム変数で IP アドレスをチェックします。場合によっては、これが正しいアドレスを含まないことがあります。IP アドレスを読み取るためのカスタムヘッダーを指定することができます。"
+
+#: admin/admin-tab-integrate.php:269
+msgid "Select this checkbox to make the security_storage flag \"granted\" by default."
+msgstr "このチェックボックスを選択すると、security_storage フラグがデフォルトで「許可」されます。"
+
+#: admin/admin-tab-integrate.php:261
+msgid "Select this checkbox to make the functionality_storage flag \"granted\" by default."
+msgstr "このチェックボックスを選択すると、functionality_storage フラグがデフォルトで「許可」されます。"
+
+#: admin/admin-tab-integrate.php:277
+msgid "Select this checkbox to make the personalization_storage flag \"granted\" by default."
+msgstr "このチェックボックスを選択すると、personalization_storage フラグがデフォルトで「許可」されます。"
+
+#: admin/admin-tab-integrate.php:229
+msgid "Select this checkbox to make the analytics_storage flag \"granted\" by default."
+msgstr "このチェックボックスを選択すると、analytics_storage フラグがデフォルトで「許可」されます。"
+
+#: admin/admin-tab-integrate.php:268
+msgid "Security Storage"
+msgstr "セキュリティストレージ"
+
+#: admin/admin-tab-integrate.php:260
+msgid "Functionality Storage"
+msgstr "機能ストレージ"
+
+#: admin/admin-tab-integrate.php:276
+msgid "Personalization Storage"
+msgstr "パーソナライゼーションストレージ"
+
+#: admin/admin-tab-integrate.php:228
+msgid "Analytics Storage"
+msgstr "アナリティクスストレージ"
+
+#: admin/admin-tab-integrate.php:237
+msgid "Select this checkbox to make the ad_storage flag \"granted\" by default."
+msgstr "このチェックボックスを選択すると、ad_storage フラグがデフォルトで「許可」されます。"
+
+#: admin/admin-tab-integrate.php:236
+msgid "Ad Storage"
+msgstr "広告ストレージ"
+
+#: admin/admin-tab-integrate.php:211 admin/admin.php:1089
+msgid "Google Consent Mode"
+msgstr "Google 同意モード"
+
+#: admin/admin-tab-integrate.php:137
+msgid "Clear ecommerce object before new event"
+msgstr "新しいイベントの前に ecommerce オブジェクトをクリアする"
+
+#. translators: 1: anchor element linking to the official GA4 doc about
+#. clearing the ecommerce object. 2: closing anchor element.
+#: admin/admin-tab-integrate.php:141
+msgid ""
+"Clear the ecommerce object before any new event being pushed into the data layer.<br /><br />\n"
+"\t\t\t\t\tAlthought it is %1$srecommended by Google%2$s, it is not mandatory to activate this feature as\n"
+"\t\t\t\t\tthe GA4 event tag reads only the last pushed ecommerce data on any new event.<br />\n"
+"\t\t\t\t\tUse it if you encounter issues with your GTM implementation."
+msgstr ""
+"新しいイベントをデータレイヤーにプッシュする前に、ecommerce オブジェクトをクリアします。<br /><br />\n"
+"\t\t\t\t\t%1$sGoogle が推奨している%2$s 設定ですが、GA4 イベントタグは新しいイベントのたびに最後にプッシュされた ecommerce データのみを読み込むため、必須ではありません。<br />\n"
+"\t\t\t\t\tGTM の実装に問題がある場合にご利用ください。"
+
+#: admin/admin-tab-advanced.php:33
+msgid "Do not use console.log() messages on frontend"
+msgstr "フロントエンドで console.log() メッセージを使用しない"
+
+#: admin/admin-tab-advanced.php:34
+msgid "GTM4WP puts several useful messages into the console of your browser which can also help give proper support in some cases. If you see any issues regarding this functionality, you can disable it here."
+msgstr "GTM4WP は、ブラウザーのコンソールにいくつかの有用なメッセージを表示し、場合によっては適切なサポートを提供するのにも役立ちます。この機能に関して問題がある場合は、ここで無効化することができます。"
+
+#: admin/admin.php:628
+msgid "Invalid GTM custom domain path. Value can include anything between a-z, A-Z, 0-9 or any of the characters . - _"
+msgstr "GTM カスタムドメインパスが無効です。使用できる文字は a〜z、A〜Z、0〜9、および . - _ のみです。"
+
+#: admin/admin-tab-advanced.php:44
+msgid "Enter a custom path for your custom domain name if it is not gtm.js. Do not include the / prefix. Leave this blank to use gtm.js"
+msgstr "カスタムドメインのパスが gtm.js でない場合はここに入力してください。先頭の / は含めないでください。空白のままにすると gtm.js が使用されます。"
+
+#: admin/admin-tab-advanced.php:43
+msgid "Container custom path"
+msgstr "コンテナのカスタムパス"
+
+#. translators: %s: PHP version number.
+#: admin/admin.php:1372
+msgid "Warning: You are using an outdated version of PHP (%s) that might be not compatible with future versions of the plugin Google Tag Manager for WordPress (GTM4WP). Please consider to upgrade your PHP."
+msgstr "警告: 古いバージョンの PHP (%s) を使用しているため、Google Tag Manager for WordPress (GTM4WP) プラグインの将来のバージョンと互換性がない可能性があります。PHP のアップグレードをご検討ください。"
+
+#. translators: 1: opening anchor tag that points to the corresponding
+#. Analytics Talks blog post. 2: closing anchor tag.
+#: admin/admin.php:216
+msgid "Based on the script originaly posted to %1$sAnalytics Talk%2$s"
+msgstr "%1$sAnalytics Talk%2$s に最初に投稿されたスクリプトをベースにしています"
+
+#. translators: 1: opening anchor tag linking to GTM's developer doc homepage.
+#. 2: Closing anchor tag.
+#: admin/admin.php:180
+msgid ""
+"This plugin is intended to be used by IT and marketing staff. Please be sure you read the\n"
+"\t\t\t\t\t%1$sGoogle Tag Manager Help Center%2$s before you start using this plugin.<br /><br />"
+msgstr ""
+"このプラグインは IT 担当者やマーケティング担当者を対象としています。ご利用前に必ず\n"
+"\t\t\t\t\t%1$sGoogle タグ マネージャー ヘルプセンター%2$s をお読みください。<br /><br />"
+
+#. translators: 1: opening anchor tag linking to Cookiebot's documentation
+#. about the automatic cookie blocking feature. 2: Closing anchor tag.
+#: admin/admin-tab-integrate.php:200
+msgid "Enable this checkbox if you wish to use the %1$sautomatic cookie blocking mode of Cookiebot with Google Tag Manager%2$s."
+msgstr "Google タグ マネージャーで %1$sCookiebot の自動クッキーブロックモード%2$s を使用したい場合は、このチェックボックスを有効にしてください。"
+
+#. translators: 1: anchor element linking to GTM4WP setup guide for Google Ads
+#. dynamic remarketing. 2: closing anchor element.
+#: admin/admin-tab-integrate.php:96
+msgid ""
+"Select which vertical category to add next to each product to utilize dynamic remarketing for Google Ads.\n"
+"\t\t\t\t\t <br />Use the plugin's %1$sofficial setup guide for dynamic remarketing%2$s\n"
+"\t\t\t\t\t to setup your Google Tag Manager container."
+msgstr ""
+"Google 広告のダイナミックリマーケティングを活用するために、各商品に付加するバーティカルカテゴリーを選択してください。\n"
+"\t\t\t\t\t <br />Google タグ マネージャーコンテナの設定には、プラグインの %1$sダイナミックリマーケティング公式セットアップガイド%2$s\n"
+"\t\t\t\t\t をご利用ください。"
+
+#. translators: 1: the name of the conflicting plugin being checked. 2: either
+#. 'active' or 'inactive' using bolded formatting.
+#: admin/admin.php:508
+msgid "This plugin (%1$s) is %2$s, enabling this integration could cause issues on frontend!"
+msgstr "このプラグイン (%1$s) は %2$s です。この連携を有効にすると、フロントエンドで問題が発生する可能性があります !"
+
+#. translators: 1: the name of the conflicting plugin being checked. 2: either
+#. 'active' or 'inactive' using bolded formatting.
+#: admin/admin.php:498
+msgid "This plugin (%1$s) is %2$s, it is strongly recommended to enable this integration!"
+msgstr "このプラグイン (%1$s) は %2$s です。この連携を有効にすることを強く推奨します !"
+
+#. translators: 1: opening anchor tag linking to Open Weather Map's pricing
+#. page. 2: closing anchor tag.
+#: admin/admin-tab-basicdata.php:185
+msgid "Enter your OpenWeatherMap API key here. %1$sGet a free API key here%2$s."
+msgstr "OpenWeatherMap の API キーをここに入力してください。%1$s無料の API キーを取得する%2$s。"
+
+#. translators: 1: the anchor eleemnt pointing to ipstack.com to register for
+#. API keys. 2: closing anchor tag.
+#: admin/admin-tab-basicdata.php:136
+msgid "Enter your IPStack.com API key here. %1$sGet a free API key here%2$s."
+msgstr "IPStack.com の API キーをここに入力してください。%1$s無料の API キーを取得する%2$s。"
+
+#. translators: 1: opening anchor tag linking to ipstack.com product page. 2:
+#. closing anchor tag. 3: opening anchor tag linking to OpenWeatherMap pricing
+#. page. 4: closing anchor tag.
+#: admin/admin-tab-basicdata.php:155
+msgid ""
+"Check this option to include the current weather conditions around the current visitor.<br /><br />\n"
+"\t\t\t\t\t <strong>Attention!</strong> This feature uses %1$sipstack.com%2$s and\n"
+"\t\t\t\t\t %3$sopenweathermap.org%4$s to collect data.<br />\n"
+"\t\t\t\t\t Depending on your website's traffic, additional fees may apply!<br />\n"
+"\t\t\t\t\t This plugin caches weather data for 1 hour to lower the need to access those services.<br /><br />\n"
+"\t\t\t\t\t If you activate weather data, <strong>you will need</strong> to add an IPStack.com API key regardless of whether you\n"
+"\t\t\t\t\t activate the 'Geo data' option!"
+msgstr ""
+"現在の訪問者周辺の気象状況をデータレイヤーに含めるには、このオプションをオンにします。<br /><br />\n"
+"\t\t\t\t\t <strong>注意 !</strong> この機能はデータ収集に %1$sipstack.com%2$s および\n"
+"\t\t\t\t\t %3$sopenweathermap.org%4$s を使用します。<br />\n"
+"\t\t\t\t\t サイトのトラフィックによっては、追加費用が発生する場合があります。<br />\n"
+"\t\t\t\t\t このプラグインはこれらのサービスへのアクセス頻度を下げるために、気象データを 1 時間キャッシュします。<br /><br />\n"
+"\t\t\t\t\t 気象データを有効にする場合、「ジオデータ」オプションの有無にかかわらず、<strong>必ず</strong> IPStack.com の API キーを追加してください !"
+
+#: admin/admin.php:801
+msgid ""
+"Compatibility mode decides where to put the second, so called <code>&lt;noscript&gt;</code> or <code>&lt;iframe&gt;</code> part of the GTM container code.<br />\n"
+"\t\t\t\t\tThis code is usually only executed if your visitor has disabled JavaScript for some reason.<br/>\n"
+"\t\t\t\t\tIt is also mandatory in order to verify your site in Google Search Console using the GTM method.<br/>\n"
+"\t\t\t\t\tThe main GTM container code will be placed into the <code>&lt;head&gt;</code> section of your webpages anyway (where it belongs to).<br/><br/>\n"
+"\t\t\t\t\tIf you select \"Manually coded\", you need to edit your template files and add the following line just after the opening <code>&lt;body&gt;</code> tag:<br />\n"
+"\t\t\t\t\t<code>&lt;?php if ( function_exists( 'gtm4wp_the_gtm_tag' ) ) { gtm4wp_the_gtm_tag(); } ?&gt;</code>"
+msgstr ""
+"互換モードは、GTM コンテナコードの2番目の、いわゆる <code>&lt;noscript&gt;</code> または <code>&lt;iframe&gt;</code> 部分をどこに置くかを決定します。<br />\n"
+"\t\t\t\t\tこのコードは通常、訪問者が何らかの理由で JavaScript を無効にしている場合にのみ実行されます。<br/>\n"
+"\t\t\t\t\tまた、GTM メソッドを使用して Google サーチコンソールでサイトを検証するためには、このコードが必須です。<br/>\n"
+"\t\t\t\t\tメインの GTM コンテナコードは、いずれにせよウェブページの <code>&lt;head&gt;</code> セクション (本来あるべき場所) に配置されます。<br/><br/>\n"
+"\t\t\t\t\t「マニュアルコーディング」を選択した場合、テンプレートファイルを編集し、冒頭の <code>&lt;body&gt;</code> タグの直後に以下のコードを追加する必要があります。<br />\n"
+"\t\t\t\t\t<code>&lt;?php if ( function_exists( 'gtm4wp_the_gtm_tag' ) ) { gtm4wp_the_gtm_tag(); } ?&gt;</code>"
+
+#: admin/admin.php:794
+msgid "Container code compatibility mode"
+msgstr "コンテナコード互換モード"
+
+#: admin/admin.php:783
+msgid ""
+"Turning OFF the Google Tag Manager container itself will remove both the head and the body part of the container code but leave data layer codes working.<br/>\n"
+"\t\t\t\t\tThis should be only used in specific cases where you need to place the container code manually or using another tool."
+msgstr ""
+"Google タグ マネージャーコンテナ自体をオフにすると、head および body 部分のコンテナコードが削除されますが、データレイヤーのコードは引き続き動作します。<br/>\n"
+"\t\t\t\t\tこの設定は、コンテナコードを手動または別のツールで設置する必要がある特定のケースにのみ使用してください。"
+
+#: admin/admin.php:776
+msgid "Container code ON/OFF"
+msgstr "コンテナコードの ON/OFF"
+
+#: admin/admin.php:302
+msgid "Off"
+msgstr "Off"
+
+#: admin/admin.php:301
+msgid "On"
+msgstr "On"
+
+#: admin/admin.php:312
+msgid "Manually coded (needs tweak in your template)"
+msgstr "マニュアルコーディング (テンプレートの調整が必要)"
+
+#: admin/admin.php:310
+msgid "Off (no tweak, right placement)"
+msgstr "オフ (調整なし、適正配置)"
+
+#: admin/admin-tab-advanced.php:49
+msgid "Do not load GTM container on the frontend if role of the logged in user is any of this"
+msgstr "ログイン中のユーザーの権限グループがこれらのいずれかである場合、フロントエンドに GTM コンテナをロードしない"
+
+#: admin/admin-tab-integrate.php:126
+msgid ""
+"Turn this on to prevent the plugin to flag orders as being already tracked.<br /><br />\n"
+"\t\t\t \tLeaving this unchecked ensures that no order data will be tracked multiple times\n"
+"\t\t\t\tin any ad or measurement system.<br />\n"
+"\t\t\t\tPlease only turn this feature on if you really need it!"
+msgstr ""
+"この設定をオンにすると、プラグインが注文に「追跡済み」フラグを立てなくなります。<br /><br />\n"
+"\t\t\t \tチェックを外しておくことで、広告や計測システムで注文データが重複して追跡されることを防ぎます。<br />\n"
+"\t\t\t\t本当に必要な場合にのみ、この機能を有効にしてください !"
+
+#: admin/admin-tab-integrate.php:14
+msgid "Check this to fire dataLayer events after Contact Form 7 submissions (supported events: invalid input, spam detected, form submitted, form submitted and mail sent, form submitted and mail send failed)."
+msgstr "Contact Form 7 の送信後に dataLayer イベントを発火するには、これをチェックしてください (対応イベント: 入力エラー、スパム検出、フォーム送信済み、フォーム送信済みでメール送信成功、フォーム送信済みでメール送信失敗)。"
+
+#: admin/admin.php:311
+msgid "Footer of the page (not recommended by Google, Search Console verification will not work)"
+msgstr "ページフッター (Google は推奨していません、サーチコンソールの認証は機能しません)。"
+
+#: admin/admin-tab-advanced.php:48
+msgid "User roles to exclude"
+msgstr "除外するユーザー権限グループ"
+
+#: admin/admin-tab-advanced.php:39
+msgid "Enter your custom domain name if you are using a server side GTM container for tracking. Do not include https:// prefix. Leave this blank to use www.googletagmanager.com"
+msgstr "サーバーサイド GTM コンテナを使用して追跡を行う場合は、カスタムドメイン名をここに入力してください。https:// のプレフィックスは含めないでください。空白のままにすると www.googletagmanager.com が使用されます。"
+
+#: admin/admin-tab-advanced.php:38
+msgid "Container domain name"
+msgstr "コンテナのドメイン名"
+
+#: admin/admin-tab-integrate.php:197
+msgid "Cookiebot auto blocking"
+msgstr "Cookiebot の自動ブロック"
+
+#: admin/admin-tab-integrate.php:83
+msgid "To prevent duplicate transaction tracking at the order received page, enter the maximum age (in minutes) of the order or its payment for the transaction to be measured. Viewing the order received page of older orders will be ignored from transaction tracking, as it is considered to be a measured in an earlier session."
+msgstr "注文受付ページでトランザクションを重複して追跡しないようにするには、トランザクションを測定するための注文またはその支払いの最長期間 (分単位) を入力してください。古い注文の受注ページを表示すると、以前のセッションで計測されたものとみなされ、トランザクションの追跡から無視されます。"
+
+#: admin/admin.php:1083
+msgid "Cookiebot"
+msgstr "Cookiebot"
+
+#: admin/admin-tab-integrate.php:92
+msgid "Google Ads Business Vertical"
+msgstr "Google 広告ビジネスバーティカル"
+
+#: admin/admin-tab-integrate.php:82
+msgid "Only track orders younger than"
+msgstr "この期間内の注文のみ追跡する"
+
+#: admin/admin.php:888
+msgid "Security"
+msgstr "セキュリティ"
+
+#: admin/admin.php:1078
+msgid "Blacklist triggers"
+msgstr "ブラックリストのトリガー"
+
+#: admin/admin.php:1079
+msgid "Blacklist variables"
+msgstr "ブラックリストの変数"
+
+#: admin/admin.php:908
+msgid "Custom tag/variable templates"
+msgstr "カスタムタグ / 変数テンプレート"
+
+#: admin/admin.php:231
+msgid "For example blacklisting everything and only whitelisting the Google Analytics tag without whitelisting the URL variable type will cause your Google Analytics tags to be blocked anyway since the attached triggers (Page View) can not fire!"
+msgstr "たとえば、すべてをブラックリストに設定し、Google アナリティクスタグのみをホワイトリストに登録した場合でも、URL 変数タイプをホワイトリストに含めていないと、関連するトリガー (ページビュー) が発火できないため、Google アナリティクスタグはブロックされてしまいます !"
+
+#: admin/admin.php:392
+msgid "Block all, except the checked items on all blacklist tabs (whitelist)"
+msgstr "チェックされた項目以外をすべてブロックする (ホワイトリスト)"
+
+#: admin/admin.php:391
+msgid "Allow all, except the checked items on all blacklist tabs (blacklist)"
+msgstr "チェックされた項目以外をすべて許可する (ブラックリスト)"
+
+#: integration/woocommerce.php:1469
+msgid "Grouped Product Detail Page"
+msgstr "グループ商品の詳細ページ"
+
+#: admin/admin-tab-integrate.php:72
+msgid "Order data in data layer"
+msgstr "データレイヤーへの注文データ"
+
+#: admin/admin-tab-integrate.php:73
+msgid "Enable this to add all order attribute into the data layer on the order received page regardless and independently from classic and enhanced ecommerce tracking (WooCommerce 3.x required)"
+msgstr "これを有効にすると、クラシックおよび拡張eコマーストラッキングとは独立して、注文完了ページのデータレイヤーにすべての注文属性が追加されます (WooCommerce 3.x 以上が必要)。"
+
+#: admin/admin-tab-basicdata.php:63
+msgid "Post Terms"
+msgstr "投稿のターム"
+
+#: admin/admin.php:1084
+msgid "Weather & geo data"
+msgstr "気象・地理データ"
+
+#: admin/admin-tab-basicdata.php:146
+msgid "Cloudflare country code"
+msgstr "Cloudflare の国番号"
+
+#: admin/admin-tab-integrate.php:88
+msgid "Enable this to exclude shipping costs from the revenue variable while generating the purchase data"
+msgstr "購入データを作成する際に、配送料を収益変数から除外する場合、これを有効化します"
+
+#: admin/admin-tab-integrate.php:87
+msgid "Exclude shipping from revenue"
+msgstr "売上から送料を除く"
+
+#: admin/admin-tab-basicdata.php:64
+msgid "Check this option to include taxonomy values associated with a given post."
+msgstr "指定した投稿に関連するタクソノミーの値を含めるには、このオプションをオンにします。"
+
+#: admin/admin-tab-integrate.php:53
+msgid "Enable this option to include the content of the cart in the data layer on each page. Needs WooCommerce v3.2 or newer. Especially useful for site personalization tools."
+msgstr "このオプションを有効化すると、各ページのデータレイヤーにカートの中身が含まれます。WooCommerce v3.2 以降が必要です。特にサイトのパーソナライズツールに有効です。"
+
+#: admin/admin-tab-integrate.php:63
+msgid "Select which custom taxonomy is being used to add the brand of products"
+msgstr "商品のブランドを追加するために使用するカスタムタクソノミーを選択してください。"
+
+#: admin/admin-tab-integrate.php:62
+msgid "Taxonomy to be used for product brands"
+msgstr "商品ブランドに使用するタクソノミー"
+
+#: admin/admin-tab-integrate.php:52
+msgid "Cart content in data layer"
+msgstr "データレイヤーのカート内容"
+
+#: admin/admin-tab-basicdata.php:147
+msgid "Add the country code of the user provided by Cloudflare (if Cloudflare is used with your site)"
+msgstr "Cloudflare が提供するユーザーの国コードを追加します (サイトで Cloudflare を使用している場合)。"
+
+#: admin/admin-tab-basicdata.php:133
+msgid "IPStack.com API key"
+msgstr "IPStack.com API キー"
+
+#: admin/admin-tab-events.php:18
+msgid "New user registration"
+msgstr "新規ユーザー登録"
+
+#: admin/admin-tab-integrate.php:40
+msgid "Products per impression"
+msgstr "インプレッションあたりの商品数"
+
+#: admin/admin-tab-integrate.php:124
+msgid "Do not flag orders as being tracked"
+msgstr "注文に追跡フラグを立てない"
+
+#: admin/admin.php:1082
+msgid "Accelerated Mobile Pages"
+msgstr "Accelerated Mobile Pages (AMP)"
+
+#: admin/admin-tab-advanced.php:29
+msgid "Turning on this option will load your Google Tag Manager container as early as possible during page load. This can cause issues if you are using jQuery in your custom HTML tags that fire on 'Page View' events."
+msgstr "このオプションをオンにすると、ページ読み込み時にできるだけ早く Google タグ マネージャーコンテナが読み込まれます。「ページビュー」イベントで発火するカスタム HTML タグ内で jQuery を使用している場合、問題が発生する可能性があります。"
+
+#: admin/admin-tab-advanced.php:28
+msgid "Load GTM container as early as possible"
+msgstr "GTM コンテナをできる限り早く読み込む"
+
+#. translators: 1: opening anchor tag for a link pointing to the official GTM
+#. help center article about the AMP container snippet 2: Closing anchor tag.
+#: admin/admin-tab-integrate.php:177
+msgid ""
+"Enter a comma separated list of Google Tag Manager container IDs that you would like to use on your site.\n"
+"\t\t\t\tThis plugin will add the %1$sAMP GTM snippet%2$s to your AMP pages."
+msgstr ""
+"サイトで使用する Google タグ マネージャーコンテナ ID をカンマ区切りで入力してください。\n"
+"\t\t\t\tこのプラグインは AMP ページに %1$sAMP GTM スニペット%2$s を追加します。"
+
+#: admin/admin-tab-integrate.php:174
+msgid "Google Tag Manager 'AMP' Container ID"
+msgstr "Google タグ マネージャー 'AMP' コンテナ ID"
+
+#: admin/admin-tab-integrate.php:78
+msgid "Enable this to exclude tax from the revenue variable while generating the purchase data"
+msgstr "購入データを生成する際に、税金を収益変数から除外するには、これを有効にします。"
+
+#: admin/admin-tab-integrate.php:77
+msgid "Exclude tax from revenue"
+msgstr "売上から税を除く"
+
+#: admin/admin-tab-integrate.php:186
+msgid ""
+"This does not seems to be a valid Google Tag Manager Container ID! Valid format: GTM-XXXXXX\n"
+"\t\t\t\twhere X can be numbers and capital letters. Use comma without any space (,) to enter multpile IDs."
+msgstr ""
+"有効な Google タグ マネージャーコンテナ ID ではないようです。有効な形式: GTM-XXXXXX\n"
+"\t\t\t\t(X は数字または大文字アルファベット)。複数の ID を入力するにはスペースなしのカンマ区切り (,) で入力してください。"
+
+#: admin/admin.php:649
+msgid "Invalid AMP Google Tag Manager Container ID. Valid ID format: GTM-XXXXX. Use comma without additional space (,) to enter more than one ID."
+msgstr "AMP Google タグ マネージャーコンテナ ID が無効です。有効な ID の形式: GTM-XXXXX。複数の ID を入力するには、スペースなしのカンマ区切りで入力してください。"
+
+#: admin/admin-tab-events.php:24
+msgid "Check this option to include a Tag Manager event when an existing user has been logged in on the frontend of your site (admin events not included)"
+msgstr "既存ユーザーがサイトのフロントエンドにログインしたときにタグ マネージャーイベントを含めるには、このオプションをオンにします (管理者イベントは含まれません)。"
+
+#: admin/admin-tab-events.php:19
+msgid "Check this option to include a Tag Manager event when a new user registration has been completed on the frontend of your site (admin events not included)"
+msgstr "サイトのフロントエンドで新規ユーザー登録が完了したときにタグ マネージャーイベントを含めるには、このオプションをオンにします (管理者イベントは含まれません)。"
+
+#: admin/admin-tab-events.php:23
+msgid "User logged in"
+msgstr "ユーザーログイン"
+
+#: admin/admin-tab-basicdata.php:104
+msgid "Check this option to include the IP address of the visitor. You might use this to filter internal traffic inside your GTM container. Please be aware that per GDPR its not allowed to transmit this full IP address to Google Analytics or to any other measurement system without explicit consent from the visitor."
+msgstr "訪問者の IP アドレスを含めるには、このオプションをオンにします。このオプションは、GTM コンテナ内の内部トラフィックをフィルタリングするために使用します。なお、GDPR に基づき、訪問者の明確な同意なしに、この IP アドレスを Google アナリティクスやその他の測定システムに送信することは許可されていません。"
+
+#: admin/admin-tab-basicdata.php:103
+msgid "Visitor IP"
+msgstr "訪問者の IP"
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+#: duracelltomi-google-tag-manager-for-wordpress.php
+msgid "https://gtm4wp.com/"
+msgstr "https://gtm4wp.com/"
+
+#: admin/admin.php:1088
+msgid "Misc"
+msgstr "その他"
+
+#: public/frontend.php:594 public/frontend.php:595 public/frontend.php:596
+#: public/frontend.php:597 public/frontend.php:598 public/frontend.php:599
+#: public/frontend.php:600 public/frontend.php:601
+msgid "(no geo data available)"
+msgstr "(ジオデータ無し)"
+
+#: admin/admin.php:1349
+msgid "Incomplete Google Tag Manager environment configuration: either gtm_preview or gtm_auth parameter value is missing!"
+msgstr "Google タグ マネージャー環境の設定が不完全です: gtm_preview または gtm_auth のパラメータ値が不足しています !"
+
+#: admin/admin-tab-basicdata.php:58
+msgid "Post Format"
+msgstr "投稿フォーマット"
+
+#: admin/admin-tab-basicdata.php:88
+msgid "Logged in user name"
+msgstr "ログイン中ユーザーの名前"
+
+#: admin/admin-tab-advanced.php:18
+msgid "Environment gtm_auth parameter"
+msgstr "環境 gtm_auth パラメータ"
+
+#: admin/admin-tab-advanced.php:19 admin/admin-tab-advanced.php:24
+msgid "Enter the gtm_auth parameter of the Google Tag Manager environment that has to be activated on this site. Both gtm_auth and gtm_preview parameters are required to activate the desired environment."
+msgstr "このサイトで有効化する必要がある Google タグ マネージャー環境の gtm_auth パラメータを入力します。gtm_auth と gtm_preview の両方のパラメータが必要です。"
+
+#: admin/admin-tab-advanced.php:23
+msgid "Environment gtm_preview parameter"
+msgstr "環境 gtm_preview パラメータ"
+
+#: admin/admin.php:678
+msgid "Invalid gtm_auth environment parameter value. It should only contain letters, numbers or the '-' and '_' characters."
+msgstr "gtm_auth 環境パラメータの値が無効です。英字、数字、または「-」「_」のみ使用可能です。"
+
+#: admin/admin.php:352
+msgid "This does not seems to be a valid gtm_auth parameter! It should only contain letters, number and the &quot;-&quot; character. Please check and try again"
+msgstr "有効な gtm_auth パラメータではないようです。英字、数字、および &quot;-&quot; 文字のみ使用可能です。確認して再度お試しください。"
+
+#: admin/admin-tab-integrate.php:57
+msgid "Include full category path."
+msgstr "完全なカテゴリーパスを含める。"
+
+#: admin/admin-tab-integrate.php:67
+msgid "Customer data in data layer"
+msgstr "データレイヤーへの顧客データ"
+
+#: admin/admin-tab-basicdata.php:125 admin/admin.php:1288
+msgid "Geo data"
+msgstr "ジオデータ"
+
+#: admin/admin-tab-basicdata.php:89
+msgid "Check this option to include the username of the logged in user."
+msgstr "ログイン中のユーザーのユーザー名を含めるには、このオプションをオンにします。"
+
+#: admin/admin-tab-basicdata.php:59
+msgid "Check this option to include the post format."
+msgstr "投稿フォーマットを含めるには、このオプションをオンにします。"
+
+#: admin/admin.php:681
+msgid "Invalid gtm_preview environment parameter value. It should have the format 'env-NN' where NN is an integer number."
+msgstr "gtm_preview 環境パラメータの値が無効です。「env-NN」の形式である必要があります (NN は整数)。"
+
+#: admin/admin.php:385
+msgid "This does not seems to be a valid gtm_preview parameter! It should have the format &quot;env-NN&quot; where NN is an integer number. Please check and try again"
+msgstr "有効な gtm_preview パラメータではないようです。形式は &quot;env-NN&quot; (NN は整数) である必要があります。確認して再度お試しください。"
+
+#: admin/admin-tab-integrate.php:68
+msgid "Enable this to add all customer data (billing and shipping data, total number of orders and order value) into the data layer (WooCommerce 3.x required)"
+msgstr "すべての顧客データ (請求・配送情報、注文件数合計、注文金額) をデータレイヤーに追加するには、これを有効にします (WooCommerce 3.x 以上が必要)。"
+
+#: admin/admin-tab-basicdata.php:126
+msgid "Add geo data (latitude, longitude, country, city, etc) of the current visitor (provided by ipstack.com)"
+msgstr "現在の訪問者のジオデータ (緯度・経度・国・都市など) を追加します (ipstack.com 提供)。"
+
+#: admin/admin-tab-integrate.php:58
+msgid "Check this to inclulde the full category path of each product in enhanced ecommerce tracking. WARNING! This can lead to performance issues on large sites with lots of traffic!"
+msgstr "拡張eコマーストラッキングで各商品の完全なカテゴリーパスを含めるには、これをチェックしてください。注意 ! トラフィックの多い大規模サイトでは、パフォーマンスに問題が生じる可能性があります !"
+
+#: integration/woocommerce.php:1116
+msgid "Upsell Products"
+msgstr "アップセル商品"
+
+#: integration/woocommerce.php:1101
+msgid "Cross-Sell Products"
+msgstr "クロスセル商品"
+
+#: admin/admin-tab-basicdata.php:98
+msgid "Logged in user creation date"
+msgstr "ログイン中ユーザーの登録日"
+
+#: admin/admin-tab-basicdata.php:99
+msgid "Check this option to include the date of creation (registration) of the logged in user."
+msgstr "ログイン中のユーザーのアカウント作成日 (登録日) を含めるには、このオプションをオンにします。"
+
+#: admin/admin-tab-integrate.php:109
+msgid "Product ID prefix"
+msgstr "商品 ID の接頭辞"
+
+#: admin/admin-tab-integrate.php:110
+msgid "Some product feed generator plugins prefix product IDs with a fixed text like 'woocommerce_gpf'. You can enter this prefix here so that tags in your website include this prefix as well."
+msgstr "一部の商品フィード生成プラグインは、'woocommerce_gpf' のような固定テキストを商品 ID の先頭に付加します。ここにプレフィックスを入力すると、サイトのタグにも同じプレフィックスが含まれます。"
+
+#: admin/admin-tab-basicdata.php:93
+msgid "Logged in user email"
+msgstr "ログイン中ユーザーのメールアドレス"
+
+#: admin/admin-tab-basicdata.php:94
+msgid "Check this option to include the email address of the logged in user."
+msgstr "ログイン中のユーザーのメールアドレスを含めるには、このオプションをオンにします。"
+
+#: admin/admin-tab-basicdata.php:29
+msgid "Check this option to include the ID of the author on the current post or author page."
+msgstr "現在の投稿または投稿者ページの投稿者 ID を含めるには、このオプションをオンにします。"
+
+#: admin/admin-tab-integrate.php:115
+msgid "Check this to use product SKU instead of the ID of the products for remarketing and ecommerce tracking. Will fallback to ID if no SKU is set."
+msgstr "リマーケティングおよびeコマーストラッキングで、商品 ID の代わりに SKU を使用するには、これをチェックしてください。SKU が設定されていない場合は ID にフォールバックします。"
+
+#: admin/admin.php:1087
+msgid "Site"
+msgstr "サイト"
+
+#: admin/admin-tab-basicdata.php:195
+msgid "Site ID"
+msgstr "サイト ID"
+
+#: admin/admin-tab-basicdata.php:200
+msgid "Site name"
+msgstr "サイト名"
+
+#: admin/admin-tab-basicdata.php:28
+msgid "Post author ID"
+msgstr "投稿者 ID"
+
+#: admin/admin-tab-basicdata.php:201
+msgid "Name of the current site in a WordPress Multisite environment"
+msgstr "WordPress マルチサイト環境における現在のサイト名"
+
+#: admin/admin-tab-basicdata.php:196
+msgid "ID of the current site in a WordPress Multisite environment"
+msgstr "WordPress マルチサイト環境における現在のサイト ID"
+
+#: admin/admin-tab-basicdata.php:182
+msgid "OpenWeatherMap API key"
+msgstr "OpenWeatherMap API キー"
+
+#: admin/admin.php:770
+msgid "Enter your Google Tag Manager ID here. Use comma without space (,) to enter multiple IDs."
+msgstr "Google タグ マネージャー ID を入力します。複数 ID を入力するには、スペース無しの半角コンマ区切りで入力します。"
+
+#: admin/admin-tab-basicdata.php:53
+msgid "Post ID"
+msgstr "投稿 ID"
+
+#: integration/woocommerce.php:1135
+msgid " (widget)"
+msgstr " (ウィジェット)"
+
+#: integration/woocommerce.php:1161
+msgid "Sale Products"
+msgstr "セール商品"
+
+#: integration/woocommerce.php:1293
+msgid "Search Results"
+msgstr "検索結果"
+
+#: integration/woocommerce.php:1149
+msgid "Recent Products"
+msgstr "最新の商品"
+
+#: integration/woocommerce.php:1086 integration/woocommerce.php:1209
+msgid "Related Products"
+msgstr "関連商品"
+
+#: integration/woocommerce.php:1197
+msgid "Featured Products"
+msgstr "おすすめ商品"
+
+#: integration/woocommerce.php:1173
+msgid "Best Selling Products"
+msgstr "最も売れている商品"
+
+#: integration/woocommerce.php:1185
+msgid "Top Rated Products"
+msgstr "評価の高い商品"
+
+#: integration/woocommerce.php:1297
+msgid "General Product List"
+msgstr "一般商品リスト"
+
+#: admin/admin-tab-basicdata.php:54
+msgid "Check this option to include the post id."
+msgstr "現在の投稿の ID を含めるには、このオプションをオンにします。"
+
+#: admin/admin.php:670
+msgid "Invalid Google Tag Manager ID. Valid ID format: GTM-XXXXX. Use comma without additional space (,) to enter more than one container ID."
+msgstr "Google タグ マネージャー ID が無効です。有効な ID の形式: GTM-XXXXX。複数のコンテナ ID を入力するには、スペースなしのカンマ区切りで入力してください。"
+
+#: admin/admin.php:293
+msgid "This does not seems to be a valid Google Tag Manager ID! Valid format: GTM-XXXXX where X can be numbers and capital letters. Use comma without any space (,) to enter multpile container IDs."
+msgstr "有効な Google タグ マネージャー ID ではないようです。有効な形式: GTM-XXXXX (X は数字または大文字アルファベット)。複数のコンテナ ID を入力するにはスペースなしのカンマ区切りで入力してください。"
+
+#: admin/admin.php:1435
+msgid "Settings"
+msgstr "設定"
+
+#: admin/admin.php:1074
+msgid "Search"
+msgstr "検索"
+
+#: admin/admin.php:988
+msgid "Credits"
+msgstr "クレジット"
+
+#: admin/admin-tab-scrolltracking.php:13
+msgid "Enabled"
+msgstr "有効"
+
+#: admin/admin-tab-integrate.php:13 admin/admin.php:1080
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: admin/admin.php:1073
+msgid "Posts"
+msgstr "投稿"
+
+#: admin/admin.php:963
+msgid "Advanced"
+msgstr "詳細"
+
+#: admin/admin-tab-basicdata.php:38
+msgid "Post date"
+msgstr "投稿日"
+
+#: admin/admin.php:757
+msgid "General"
+msgstr "一般"
+
+#: admin/admin-tab-scrolltracking.php:21
+msgid "Debug mode"
+msgstr "デバッグモード"
+
+#: admin/admin.php:840
+msgid "Events"
+msgstr "イベント"
+
+#: admin/admin.php:1081
+msgid "WooCommerce"
+msgstr "WooCommerce"
+
+#: admin/admin.php:1050
+msgid "Google Tag Manager"
+msgstr "Google タグ マネージャー"
+
+#: admin/admin.php:764
+msgid "Google Tag Manager ID"
+msgstr "Google タグ マネージャー ID"
+
+#. Author of the plugin
+#: duracelltomi-google-tag-manager-for-wordpress.php
+msgid "Thomas Geiger"
+msgstr "Thomas Geiger"
+
+#. translators: 1: opening anchor element pointing to the GTM4WP options page.
+#. 2: clsing anchor element.
+#: admin/admin.php:1333
+msgid "To start using Google Tag Manager for WordPress, please %1$senter your GTM ID%2$s"
+msgstr "GTM4WP を使用開始するには %1$sGTM ID を入力%2$sしてください"
+
+#: admin/admin.php:1075
+msgid "Visitors"
+msgstr "訪問者"
+
+#: admin/admin-tab-basicdata.php:117
+msgid "OS data *"
+msgstr "OS のデータ *"
+
+#: admin/admin.php:400
+msgid "Fahrenheit"
+msgstr "華氏"
+
+#: admin/admin.php:816
+msgid "Basic data"
+msgstr "基本データ"
+
+#: admin/admin-tab-basicdata.php:43
+msgid "Post title"
+msgstr "投稿タイトル"
+
+#: admin/admin-tab-basicdata.php:48
+msgid "Post count"
+msgstr "投稿数"
+
+#: admin/admin-tab-basicdata.php:68
+msgid "Search data"
+msgstr "検索データ"
+
+#: admin/admin.php:1086
+msgid "Media events"
+msgstr "メディアイベント"
+
+#: admin/admin-tab-basicdata.php:151 admin/admin.php:1292
+msgid "Weather data"
+msgstr "気象データ"
+
+#: admin/admin-tab-basicdata.php:121
+msgid "Device data *"
+msgstr "端末データ *"
+
+#: admin/admin-tab-scrolltracking.php:41
+msgid "Scroller time"
+msgstr "スクロール時間"
+
+#: admin/admin.php:1077
+msgid "Blacklist tags"
+msgstr "ブラックリストタグ"
+
+#: admin/admin.php:1085
+msgid "General events"
+msgstr "一般的なイベント"
+
+#: admin/admin-tab-basicdata.php:113
+msgid "Browser data *"
+msgstr "ブラウザーデータ *"
+
+#: admin/admin.php:864 admin/admin.php:1296
+msgid "Scroll tracking"
+msgstr "スクロールトラッキング"
+
+#: admin/admin-tab-basicdata.php:33
+msgid "Post author name"
+msgstr "投稿者名"
+
+#: admin/admin-tab-basicdata.php:73
+msgid "Logged in status"
+msgstr "ログイン状態"
+
+#: admin/admin-tab-scrolltracking.php:31
+msgid "Minimum distance"
+msgstr "最小の距離"
+
+#: admin/admin.php:1076
+msgid "Browser/OS/Device"
+msgstr "ブラウザー / OS / 端末"
+
+#: admin/admin-tab-basicdata.php:83
+msgid "Logged in user ID"
+msgstr "ログインユーザー ID"
+
+#: admin/admin-tab-events.php:38
+msgid "Soundcloud events"
+msgstr "Soundcloud のイベント"
+
+#: admin/admin-tab-basicdata.php:176
+msgid "Weather data units"
+msgstr "気象データの単位"
+
+#: admin/admin-tab-events.php:33
+msgid "Vimeo video events"
+msgstr "Vimeo video のイベント"
+
+#: admin/admin-tab-basicdata.php:78
+msgid "Logged in user role"
+msgstr "ログイン中ユーザーの権限グループ"
+
+#: admin/admin-tab-basicdata.php:23
+msgid "Tags of current post"
+msgstr "現在の投稿のタグ"
+
+#: admin/admin-tab-events.php:28
+msgid "YouTube video events"
+msgstr "YouTube 動画のイベント"
+
+#: admin/admin-tab-integrate.php:114
+msgid "Use SKU instead of ID"
+msgstr "ID の代わりに SKU を使用"
+
+#: admin/admin-tab-advanced.php:13
+msgid "dataLayer variable name"
+msgstr "データレイヤー変数名"
+
+#: admin/admin-tab-scrolltracking.php:36
+msgid "Content ID"
+msgstr "コンテンツ ID"
+
+#: admin/admin-tab-scrolltracking.php:37
+msgid "Enter the DOM ID of the content element in your template. Leave it empty for default(content). Do not include the # sign."
+msgstr "テンプレート内のコンテンツ要素の DOM ID を入力します。デフォルト (コンテンツ) の場合は空のままにしてください。# 記号は含めないでください。"
+
+#: admin/admin-tab-scrolltracking.php:42
+msgid "Enter the number of seconds after the the scroller user is being treated as a reader, someone who really reads the content, not just scrolls through it."
+msgstr "スクローラーのユーザーが、ただスクロールするだけでなく、本当にコンテンツを読む読者として扱われるようになるまでの秒数を入力します。"
+
+#. Description of the plugin
+#: duracelltomi-google-tag-manager-for-wordpress.php
+msgid "The first Google Tag Manager plugin for WordPress with business goals in mind"
+msgstr "ビジネス目標を念頭に置いた、WordPress 向けの最初の Google タグ マネージャープラグイン"
+
+#: admin/admin.php:1025
+msgid "Google Tag Manager for WordPress options"
+msgstr "WordPress 用 Google タグ マネージャーのオプション"
+
+#: admin/admin.php:399
+msgid "Celsius"
+msgstr "摂氏"
+
+#: admin/admin.php:320
+msgid "This does not seems to be a valid JavaScript variable name! Please check and try again"
+msgstr "有効な JavaScript 変数名ではないようです。確認して再度お試しください。"
+
+#: admin/admin.php:246
+msgid "Some info about the author of this plugin"
+msgstr "このプラグインの作者に関する情報"
+
+#: admin/admin.php:241
+msgid "You usually do not need to modify thoose settings. Please be carefull while hacking here."
+msgstr "通常、これらの設定を変更する必要はありません。こちらでの変更には十分ご注意ください。"
+
+#: admin/admin.php:212
+msgid "Fire tags based on how the visitor scrolls through your page."
+msgstr "訪問者のスクロール状況に応じてタグを発火します。"
+
+#: admin/admin.php:207
+msgid "Fire tags in Google Tag Manager on special events on your website"
+msgstr "ウェブサイトの特定イベントに応じて Google タグ マネージャーのタグを発火します。"
+
+#: admin/admin.php:895
+msgid "Enable blacklist/whitelist"
+msgstr "ブラックリスト / ホワイトリストを有効化"
+
+#: admin/admin-tab-scrolltracking.php:32
+msgid "The minimum amount of pixels that a visitor has to scroll before we treat the move as scrolling."
+msgstr "スクロールとして判定するために訪問者がスクロールする必要がある最小ピクセル数。"
+
+#: admin/admin-tab-scrolltracking.php:27
+msgid "Enter the number of milliseconds after the script checks the current location. It prevents too many events being fired while scrolling."
+msgstr "スクリプトが現在の位置を確認するまでのミリ秒数を入力します。スクロール中にイベントが過剰に発火するのを防ぎます。"
+
+#: admin/admin-tab-scrolltracking.php:26
+msgid "Time delay before location check"
+msgstr "位置確認前の待機時間"
+
+#: admin/admin-tab-scrolltracking.php:22
+msgid "Fire console.log() commands instead of dataLayer events."
+msgstr "dataLayer イベントの代わりに console.log() コマンドを使用する。"
+
+#: admin/admin-tab-scrolltracking.php:14
+msgid "Enable scroll tracker script on your website."
+msgstr "ウェブサイトでスクロールトラッカースクリプトを有効にします。"
+
+#: admin/admin-tab-events.php:39
+msgid "Check this option to include a Tag Manager event when a visitor interacts with a Soundcloud media embeded on your site."
+msgstr "サイトに埋め込まれた SoundCloud メディアに訪問者がインタラクションした際にタグ マネージャーイベントを含めるには、このオプションをオンにします。"
+
+#: admin/admin-tab-events.php:34
+msgid "Check this option to include a Tag Manager event when a visitor interacts with a Vimeo video embeded on your site."
+msgstr "サイトに埋め込まれた Vimeo 動画に訪問者がインタラクションした際にタグ マネージャーイベントを含めるには、このオプションをオンにします。"
+
+#: admin/admin-tab-events.php:29
+msgid "Check this option to include a Tag Manager event when a visitor interacts with a YouTube video embeded on your site."
+msgstr "サイトに埋め込まれた YouTube 動画に訪問者がインタラクションした際にタグ マネージャーイベントを含めるには、このオプションをオンにします。"
+
+#: admin/admin-tab-events.php:13
+msgid "Form fill events (gtm4wp.formElementEnter & gtm4wp.formElementLeave)"
+msgstr "フォーム入力イベント (gtm4wp.formElementEnter & gtm4wp.formElementLeave)"
+
+#: admin/admin-tab-basicdata.php:177
+msgid "Select which temperature units you would like to use."
+msgstr "使用する温度単位を選択します。"
+
+#: admin/admin-tab-basicdata.php:118
+msgid "Check this option to include the name and version of the operating system the visitor uses."
+msgstr "訪問者が使用しているオペレーティングシステムの名前とバージョンを含めるには、このオプションをオンにします。"
+
+#: admin/admin-tab-basicdata.php:114
+msgid "Check this option to include the name, version and engine data of the browser the visitor uses."
+msgstr "訪問者が使用しているブラウザーの名前、バージョン、およびエンジン情報を含めるには、このオプションをオンにします。"
+
+#: admin/admin-tab-basicdata.php:84
+msgid "Check this option to include the ID of the logged in user."
+msgstr "ログイン中のユーザーの ID を含めるには、このオプションをオンにします。"
+
+#: admin/admin-tab-basicdata.php:79
+msgid "Check this option to include the role of the logged in user."
+msgstr "ログイン中のユーザーの権限グループを含めるには、このオプションをオンにします。"
+
+#: admin/admin-tab-basicdata.php:74
+msgid "Check this option to include whether there is a logged in user on your website."
+msgstr "ウェブサイトにログイン中のユーザーがいるかどうかを含めるには、このオプションをオンにします。"
+
+#: admin/admin-tab-basicdata.php:69
+msgid "Check this option to include the search term, referring page URL and number of results on the search page."
+msgstr "検索ページの検索キーワード、参照元ページの URL、および検索結果数を含めるには、このオプションをオンにします。"
+
+#: admin/admin-tab-basicdata.php:49
+msgid "Check this option to include the count of the posts currently shown on the page and the total number of posts in the category/tag/any taxonomy."
+msgstr "現在ページに表示されている投稿数と、カテゴリー / タグ / 任意のタクソノミーの投稿総数を含めるには、このオプションをオンにします。"
+
+#: admin/admin-tab-basicdata.php:44
+msgid "Check this option to include the title of the current post."
+msgstr "現在の投稿のタイトルを含めるには、このオプションをオンにします。"
+
+#: admin/admin-tab-basicdata.php:34
+msgid "Check this option to include the name of the author on the current post or author page."
+msgstr "現在の投稿または投稿者ページの投稿者名を含めるには、このオプションをオンにします。"
+
+#: admin/admin-tab-basicdata.php:24
+msgid "Check this option to include the tags of the current post."
+msgstr "現在の投稿のタグを含めるには、このオプションをオンにします。"
+
+#: admin/admin-tab-basicdata.php:19
+msgid "Check this option to include the category names of the current post or archive page"
+msgstr "現在の投稿またはアーカイブページのカテゴリー名を含めるには、このオプションをオンにします。"
+
+#: admin/admin-tab-basicdata.php:18
+msgid "Category list of current post/archive"
+msgstr "現在の投稿 / アーカイブのカテゴリーリスト"
+
+#: admin/admin-tab-basicdata.php:13
+msgid "Posttype of current post/archive"
+msgstr "現在の投稿 / アーカイブの投稿タイプ"
+
+#: admin/admin.php:227
+msgid "Here you can control which types of tags, triggers and variables can be executed on your site regardless of what tags are included in your container on the Google Tag Manager site. Use this to increase security!"
+msgstr "Google タグ マネージャーサイトのコンテナに含まれるタグに関わらず、サイトで実行できるタグ・トリガー・変数の種類をここで制御できます。セキュリティ強化にご活用ください !"
+
+#: admin/admin.php:229
+msgid "Do not modify if you do not know what to do, since it can cause issues with your tag deployment!"
+msgstr "操作方法がわからない場合は変更しないでください。タグの配信に問題が生じる可能性があります !"
+
+#: admin/admin.php:390
+msgid "Disable feature: control everything on Google Tag Manager interface"
+msgstr "この機能を無効にする: Google タグ マネージャーのインターフェースですべてを管理する"
+
+#: admin/admin.php:675
+msgid "Invalid dataLayer variable name. Please start with a character from a-z or A-Z followed by characters from a-z, A-Z, 0-9 or '_' or '-'!"
+msgstr "dataLayer 変数名が無効です。a〜z または A〜Z の文字で始まり、その後に a〜z、A〜Z、0〜9、「_」または「-」を使用してください !"
+
+#: public/frontend.php:584 public/frontend.php:585
+msgid "(no weather data available)"
+msgstr "(気象データなし)"
+
+#: admin/admin.php:236
+msgid "Google Tag Manager for WordPress can integrate with several popular plugins. Please check the plugins you would like to integrate with:"
+msgstr "WordPress 用 Google タグ マネージャーは、いくつかの人気プラグインと連携できます。連携したいプラグインを選択してください:"
+
+#: admin/admin.php:1360
+msgid "Notice: you should deactivate the plugin \"WooCommerce Google Analytics Integration\" if you are using Google Analytics tags inside Google Tag Manager!"
+msgstr "注意: Google タグ マネージャー内で Google アナリティクスタグを使用している場合は、プラグイン「WooCommerce Google Analytics Integration」を無効にしてください !"
+
+#: admin/admin.php:1364
+msgid "Notice: you should deactivate the plugin \"Google Analytics for WordPress by MonsterInsights\" if you are using Google Analytics tags inside Google Tag Manager!"
+msgstr "注意: Google タグ マネージャー内で Google アナリティクスタグを使用している場合は、プラグイン「Google Analytics for WordPress by MonsterInsights」を無効にしてください !"
+
+#: admin/admin-tab-events.php:14
+msgid "Check this option to include a Tag Manager event when a visitor moves between elements of a form (comment, contact, etc)."
+msgstr "フォーム (コメント、お問い合わせなど) の各要素間を訪問者が移動した際にタグ マネージャーイベントを含めるには、このオプションをオンにします。"
+
+#: admin/admin-tab-basicdata.php:39
+msgid "Check this option to include the date of the current post. This will include 4 dataLayer variables: full date, post year, post month, post date."
+msgstr "現在の投稿の日付を含めるには、このオプションをオンにします。4 つの dataLayer 変数 (完全な日付、投稿年、投稿月、投稿日) が含まれます。"
+
+#: admin/admin-tab-basicdata.php:14
+msgid "Check this option to include the type of the current post or archive page (post, page or any custom post type)."
+msgstr "現在の投稿またはアーカイブページの種類 (投稿、固定ページ、またはカスタム投稿タイプ) を含めるには、このオプションをオンにします。"
+
+#: admin/admin.php:1049
+msgid "Google Tag Manager for WordPress settings"
+msgstr "WordPress 用 Google タグ マネージャーの設定"
+
+#: admin/admin.php:192
+msgid "Here you can check what data is needed to be included in the dataLayer to be able to access them in Google Tag Manager"
+msgstr "ここでは、Google タグ マネージャーでアクセスするためにデータレイヤーにどのようなデータを含める必要があるかを確認することができます。"
+
+#: admin/admin.php:995
+msgid "Author"
+msgstr "作成者"
+
+#: admin/admin-tab-advanced.php:14
+msgid "In some cases you need to rename the dataLayer variable. You can enter your name here. Leave black for default name: dataLayer"
+msgstr "場合によっては dataLayer 変数の名前を変更する必要があります。ここに名前を入力できます。デフォルト: dataLayer"
+
+#: admin/admin.php:938
+msgid "Integration"
+msgstr "連携"
+
+#. translators: 1: opening anchor tag that points to WhichBrowser website. 2:
+#. closing anchor tag.
+#: admin/admin.php:196
+msgid "* Browser, OS and Device data is provided using %1$sWhichBrowser%2$s library."
+msgstr "* ブラウザー、OS、端末のデータは、%1$sWhichBrowser%2$s ライブラリから提供されます。"
+
+#: admin/admin-tab-basicdata.php:122
+msgid "Check this option to include the type of device the user is currently using (desktop, tablet or mobile) including manufacturer and model data."
+msgstr "ユーザーが現在使用している端末の種類 (デスクトップ、タブレット、モバイル) およびメーカーとモデル情報を含めるには、このオプションをオンにします。"
+
+#: admin/admin.php:51
+msgid "Deprecated:"
+msgstr "非推奨:"
