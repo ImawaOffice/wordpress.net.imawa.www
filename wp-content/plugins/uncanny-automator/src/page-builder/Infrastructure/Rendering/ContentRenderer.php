@@ -1,0 +1,369 @@
+<?php
+
+declare(strict_types=1);
+
+namespace UncannyPageBuilder\Infrastructure\Rendering;
+
+use UncannyPageBuilder\Application\Access\GetPageBuilderAllowedCapabilities;
+use UncannyPageBuilder\Application\Canvas\OriginalPageContentReaderInterface;
+use UncannyPageBuilder\Application\Canvas\PublicPageRenderPolicy;
+use UncannyPageBuilder\Application\Rendering\PublishedPage;
+use UncannyPageBuilder\Application\Rendering\PublishedPageStatus;
+use UncannyPageBuilder\Application\Rendering\LucideRuntimeInitializer;
+use UncannyPageBuilder\Domain\Shell\ShellMode;
+use UncannyPageBuilder\Infrastructure\WordPress\WordPressPostId;
+use UncannyPageBuilder\Infrastructure\WordPress\WordPressPublishedFallbackParser;
+
+/**
+ * Renders one exact published artifact through the_content filter.
+ *
+ * In this mode, the theme controls the full page structure. Uncanny injects
+ * section HTML where the_content() is called, section CSS via wp_head,
+ * and the Magic Bridge root via wp_footer.
+ */
+final class ContentRenderer
+{
+    private const DEACTIVATION_FALLBACK_MARKER = 'data-uncanny-page-builder-artifact="1"';
+
+    private bool $didRender = false;
+
+    public function __construct(
+        private readonly PublicPageRenderPolicy $publicPageRenderPolicy,
+        private readonly GetPageBuilderAllowedCapabilities $allowedCapabilities,
+        private readonly OriginalPageContentReaderInterface $originalContent,
+        private readonly DynamicRenderer $dynamicRenderer,
+        private readonly WordPressPublishedFallbackParser $fallbackParser = new WordPressPublishedFallbackParser(),
+    ) {}
+
+    /**
+     * Select the raw WordPress fallback before block, shortcode, and wpautop
+     * filters run. A broken or absent pointer must never return a late raw body
+     * after WordPress has already processed the legacy post_content value.
+     *
+     * Hook on the_content at priority 7 when the pointer runtime is activated.
+     */
+    public function selectOriginalContent($content = null): string
+    {
+        $content = is_string($content) ? $content : '';
+
+        if (is_admin()) {
+            return $content;
+        }
+
+        if (!is_singular() || !is_main_query()) {
+            return $this->withoutDeactivationFallback($content);
+        }
+
+        $postId = null;
+
+        try {
+            $postId = $this->currentPostId();
+            if ($postId === null || !$this->isActivePost($postId)) {
+                return $this->withoutDeactivationFallback($content);
+            }
+
+            // Preserve the password form already prepared by WordPress. Falling
+            // back to raw original content here would disclose the protected body.
+            if ($this->publicPageRenderPolicy->isPasswordRequired($postId)) {
+                return $content;
+            }
+
+            $read = $this->publicPageRenderPolicy->read($postId);
+            if ($read->isReady() || $read->status() === PublishedPageStatus::NotManaged) {
+                return $content;
+            }
+
+            try {
+                return $this->originalContent->publicContent($postId);
+            } catch (\Throwable) {
+                return '';
+            }
+        } catch (\Throwable $failure) {
+            // An owned legacy page can still have a stale Page Builder
+            // projection in post_content. A failed public-pointer read must
+            // use the preserved WordPress body, not the filter input.
+            error_log('[Uncanny Page Builder] Published content selection failed (' . $failure::class . ')');
+
+            if ($postId === null) {
+                return $content;
+            }
+
+            try {
+                return $this->originalContent->publicContent($postId);
+            } catch (\Throwable) {
+                return '';
+            }
+        }
+    }
+
+    /**
+     * Hook on the_content at priority 99 (after wpautop/shortcodes).
+     */
+    public function filter($content = null): string
+    {
+        $content = is_string($content) ? $content : '';
+
+        try {
+            // Theme composition frontend rendering never runs inside the admin canvas.
+            if (is_admin()) {
+                return $content;
+            }
+
+            if (!is_singular() || !is_main_query()) {
+                return $this->withoutDeactivationFallback($content);
+            }
+
+            $postId = $this->currentPostId();
+
+            if ($postId === null || !$this->isActivePost($postId)) {
+                return $this->withoutDeactivationFallback($content);
+            }
+
+            $page = $this->publicPageRenderPolicy->publishedPage($postId);
+            if (!$page instanceof PublishedPage) {
+                return $content;
+            }
+
+            /*
+             * Native artifacts belong to the standalone published template. If
+             * template routing ever falls back to the theme, do not inject native
+             * document HTML into the_content and create a malformed hybrid page.
+             */
+            if ($page->shellMode() !== ShellMode::ThemeComposition) {
+                return $content;
+            }
+
+            $rendered = $this->dynamicRenderer->render($page->html());
+            $this->didRender = true;
+
+            return $rendered;
+        } catch (\Throwable $failure) {
+            error_log('[Uncanny Page Builder] Published content render failed (' . $failure::class . ')');
+
+            return $content;
+        }
+    }
+
+    /**
+     * Pointer-derived shell classes for the eventual exact-render cutover.
+     * Working draft shell state must never affect the public body class.
+     *
+     * @param mixed $classes
+     * @return string[]
+     */
+    public function bodyClasses($classes = null): array
+    {
+        $classes = is_array($classes)
+            ? array_values(array_filter($classes, 'is_string'))
+            : [];
+
+        try {
+            if (is_admin() || !is_singular()) {
+                return $classes;
+            }
+
+            $postId = $this->currentPostId();
+            $page = $postId !== null ? $this->publicPageRenderPolicy->publishedPage($postId) : null;
+            if (!$page instanceof PublishedPage) {
+                return $classes;
+            }
+
+            $class = $page->shellMode() === ShellMode::ThemeComposition
+                ? 'upb-theme-composed'
+                : 'upb-uncanny-native';
+            if (!in_array($class, $classes, true)) {
+                $classes[] = $class;
+            }
+
+            return $classes;
+        } catch (\Throwable $failure) {
+            error_log('[Uncanny Page Builder] Published body class selection failed (' . $failure::class . ')');
+
+            return $classes;
+        }
+    }
+
+    /**
+     * Hook on wp_head at priority 99. Injects the pointed artifact CSS for
+     * theme-composition pages.
+     */
+    public function injectCss(): void
+    {
+        try {
+            // Theme composition frontend rendering never runs inside the admin canvas.
+            if (is_admin()) {
+                return;
+            }
+
+            if (!is_singular()) {
+                return;
+            }
+
+            $postId = $this->currentPostId();
+
+            $page = $postId !== null ? $this->themeCompositionPage($postId) : null;
+            if (!$page instanceof PublishedPage) {
+                return;
+            }
+
+            if ($page->css() !== '') {
+                echo '<style id="uncanny-page-builder-published-css">'
+                    . StyleElementCss::escape($page->css())
+                    . '</style>';
+            }
+        } catch (\Throwable $failure) {
+            error_log('[Uncanny Page Builder] Published CSS output failed (' . $failure::class . ')');
+        }
+    }
+
+    /**
+     * Hook on wp_footer. Outputs the Magic Bridge root div for
+     * theme_composition pages (in canvas mode, canvas.php handles this).
+     */
+    public function renderBridgeRoot(): void
+    {
+        try {
+            // Theme composition frontend rendering never runs inside the admin canvas.
+            if (is_admin()) {
+                return;
+            }
+
+            if (!is_singular()) {
+                return;
+            }
+
+            $postId = $this->currentPostId();
+
+            $page = $postId !== null ? $this->themeCompositionPage($postId) : null;
+            if (!$page instanceof PublishedPage) {
+                return;
+            }
+
+            if ($this->allowedCapabilities->currentUserHasAllowedCapability()) {
+                echo '<div id="uncanny-magic-bridge-root" data-page-id="' . esc_attr((string) $postId) . '"></div>';
+            }
+        } catch (\Throwable $failure) {
+            error_log('[Uncanny Page Builder] Magic Bridge root output failed (' . $failure::class . ')');
+        }
+    }
+
+    /**
+     * Hook on wp_footer for theme_composition pages. Emits Page Builder-owned
+     * page JavaScript after the canvas DOM exists.
+     */
+    public function renderCustomJavaScript(): void
+    {
+        // Theme composition frontend rendering never runs inside the admin canvas.
+        if (is_admin()) {
+            return;
+        }
+
+        if (!is_singular()) {
+            return;
+        }
+
+        try {
+            $postId = $this->currentPostId();
+
+            $page = $postId !== null ? $this->themeCompositionPage($postId) : null;
+            if (!$page instanceof PublishedPage) {
+                return;
+            }
+
+            echo '<script>' . LucideRuntimeInitializer::script() . '</script>';
+            echo $page->customJavaScript();
+        } catch (\Throwable $failure) {
+            // wp_footer is a shared WordPress surface. A Page Builder failure
+            // must not terminate the visitor request.
+            error_log('[Uncanny Page Builder] Published page JavaScript output failed (' . $failure::class . ')');
+        }
+    }
+
+    /**
+     * Hook on wp_footer at a late priority. Warns admins if sections
+     * were not rendered because the template didn't call the_content.
+     */
+    public function checkRenderFallback(): void
+    {
+        try {
+            // Theme composition frontend rendering never runs inside the admin canvas.
+            if (is_admin()) {
+                return;
+            }
+
+            if (!is_singular()) {
+                return;
+            }
+
+            $postId = $this->currentPostId();
+
+            $page = $postId !== null ? $this->themeCompositionPage($postId) : null;
+            if (!$page instanceof PublishedPage) {
+                return;
+            }
+
+            if ($this->didRender) {
+                return;
+            }
+
+            if ($this->allowedCapabilities->currentUserHasAllowedCapability()) {
+                include __DIR__ . '/../../Presentation/Frontend/fallback-warning.php';
+            }
+        } catch (\Throwable $failure) {
+            // wp_footer is a shared WordPress surface. A Page Builder failure
+            // must not terminate the visitor request.
+            error_log('[Uncanny Page Builder] Render fallback check failed (' . $failure::class . ')');
+        }
+    }
+
+    private function themeCompositionPage(int $postId): ?PublishedPage
+    {
+        $page = $this->publicPageRenderPolicy->publishedPage($postId);
+
+        return $page instanceof PublishedPage && $page->shellMode() === ShellMode::ThemeComposition
+            ? $page
+            : null;
+    }
+
+    private function currentPostId(): ?int
+    {
+        return WordPressPostId::fromCurrentQuery(get_queried_object_id());
+    }
+
+    private function isActivePost(int $queriedPostId): bool
+    {
+        return WordPressPostId::fromMixed(get_the_ID()) === $queriedPostId;
+    }
+
+    /**
+     * The stored fallback is active only when Page Builder does not run.
+     * Shared queries must use the preserved WordPress body while Page Builder runs.
+     */
+    private function withoutDeactivationFallback(string $content): string
+    {
+        if (!str_contains($content, self::DEACTIVATION_FALLBACK_MARKER)) {
+            return $content;
+        }
+
+        try {
+            $fallback = $this->fallbackParser->parse($content);
+            if ($fallback !== null) {
+                return $fallback->originalContent();
+            }
+        } catch (\Throwable) {
+            // A filter can change the stored block before this callback runs.
+            // Use the preserved body below when the fallback marker remains.
+        }
+
+        $postId = WordPressPostId::fromMixed(get_the_ID());
+        if ($postId === null) {
+            return '';
+        }
+
+        try {
+            return $this->originalContent->publicContent($postId);
+        } catch (\Throwable) {
+            return '';
+        }
+    }
+}
